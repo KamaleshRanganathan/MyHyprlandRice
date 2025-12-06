@@ -1,0 +1,29 @@
+* {
+    background-image: none;
+}
+
+window {
+    background-color: rgba(20, 20, 20, 0.95);
+}
+
+button {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 25px;
+    transition: all 0.2s ease;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+#lock:hover { border-color: #f39c12; }
+#logout:hover { border-color: #3498db; }
+#suspend:hover { border-color: #9b59b6; }
+#hibernate:hover { border-color: #1abc9c; }
+#shutdown:hover { border-color: #e74c3c; }
+#reboot:hover { border-color: #2ecc71; }
