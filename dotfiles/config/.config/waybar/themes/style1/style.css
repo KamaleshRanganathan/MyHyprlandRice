@@ -1,0 +1,138 @@
+/* General styling */
+* {
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    color: #cdd6f4; /* Text color from Catppuccin Mocha */
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.8); /* Semi-transparent base (#1e1e2e) for floating effect */
+    border-bottom: 2px solid #181825; /* Mantle */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners for beauty */
+    transition: background 0.3s ease; /* Smooth transitions */
+}
+
+tooltip {
+    background: #181825; /* Mantle */
+    border: 1px solid #11111b; /* Crust */
+    border-radius: 4px;
+}
+
+/* Modules styling */
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #a6adc8; /* Subtext0 */
+    border-radius: 4px;
+}
+
+#workspaces button:hover {
+    background: #45475a; /* Surface1 */
+    color: #cdd6f4; /* Text */
+    transition: all 0.2s ease;
+}
+
+#workspaces button.focused {
+    background: #585b70; /* Surface2 */
+    color: #89b4fa; /* Blue */
+}
+
+#clock {
+    padding: 0 10px;
+    color: #b4befe; /* Lavender */
+    font-weight: bold;
+}
+
+#pulseaudio {
+    padding: 0 10px;
+    color: #a6e3a1; /* Green */
+}
+
+#custom-wifi {
+    padding: 0 10px;
+    color: #89dceb; /* Sky, matching network for consistency */
+    margin-right: 5px; /* Slight spacing before network module */
+}
+
+#custom-wifi:hover {
+    background: rgba(69, 71, 90, 0.5); /* Surface1 with transparency */
+    color: #74c7ec; /* Brighter sapphire on hover, matching custom-power */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#network {
+    padding: 0 10px;
+    color: #89dceb; /* Sky */
+}
+
+#network:hover {
+    background: rgba(69, 71, 90, 0.5); /* Surface1 with transparency */
+    color: #74c7ec; /* Sapphire */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#cpu {
+    padding: 0 10px;
+    color: #fab387; /* Peach */
+}
+
+#memory {
+    padding: 0 10px;
+    color: #f9e2af; /* Yellow */
+}
+
+#temperature {
+    padding: 0 10px;
+    color: #f38ba8; /* Red */
+}
+
+#backlight {
+    padding: 0 10px;
+    color: #74c7ec; /* Sapphire */
+}
+
+#battery {
+    padding: 0 10px;
+    color: #94e2d5; /* Teal */
+}
+
+#custom-power {
+    padding: 0 10px;
+    color: #89dceb; /* Sky */
+    margin-left: 5px; /* Slight spacing from battery */
+}
+
+#custom-power:hover {
+    color: #74c7ec; /* Sapphire */
+    background: rgba(69, 71, 90, 0.5); /* Surface1 */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+#window {
+    padding: 0 10px;
+    color: #cba6f7; /* Mauve */
+    font-style: italic;
+}
+
+/* Critical states for uniqueness */
+#temperature.critical {
+    color: #f38ba8; /* Red */
+    animation: blink 1s infinite;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8; /* Red */
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}

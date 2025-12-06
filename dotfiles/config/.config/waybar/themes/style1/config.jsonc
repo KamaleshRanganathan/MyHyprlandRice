@@ -1,0 +1,105 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "custom/wifi", "network", "cpu", "memory", "temperature", "backlight", "battery", "custom/power", "tray"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "focused": "󰧞",
+            "default": "󰧞"
+        }
+    },
+
+    "hyprland/window": {
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰞃 {volume}%",
+        "format-bluetooth-muted": "󰞃 0%",
+        "format-icons": {
+            "muted": "󰝟",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "format-muted": "󰝟 0%",
+        "on-click": "pavucontrol"
+    },
+
+    "custom/wifi": {
+        "format": "󰖩",  // WiFi icon (Nerd Font)
+        "on-click": "kitty --app-id nmtui-float nmtui",  // Opens nmtui in a floating, centered terminal
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "cpu": {
+        "format": "{usage}% "
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰖩", "󰖨", "󰖥", "󰖖"]
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}
